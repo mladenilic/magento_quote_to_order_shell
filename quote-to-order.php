@@ -19,6 +19,8 @@ class Mage_Shell_Quote_To_Order extends Mage_Shell_Abstract
                 echo "Error: Quote does not exist (Make sure to set store parameter).\n";
                 return;
             }
+            
+            $quote->collectTotals();
 
             /** @var Mage_Sales_Model_Service_Quote $service */
             $service = Mage::getModel('sales/service_quote', $quote);
